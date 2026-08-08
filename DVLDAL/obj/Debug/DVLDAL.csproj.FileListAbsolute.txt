@@ -1,0 +1,9 @@
+C:\C#\DVLD\DVLDAL\bin\Debug\DVLDAL.exe.config
+C:\C#\DVLD\DVLDAL\bin\Debug\DVLDAL.exe
+C:\C#\DVLD\DVLDAL\bin\Debug\DVLDAL.pdb
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.csproj.AssemblyReference.cache
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.Properties.Resources.resources
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.csproj.GenerateResource.cache
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.csproj.CoreCompileInputs.cache
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.exe
+C:\C#\DVLD\DVLDAL\obj\Debug\DVLDAL.pdb

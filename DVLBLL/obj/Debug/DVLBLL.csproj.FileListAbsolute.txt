@@ -1,0 +1,13 @@
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLBLL.exe.config
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLBLL.exe
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLBLL.pdb
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.csproj.AssemblyReference.cache
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.Properties.Resources.resources
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.csproj.GenerateResource.cache
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.csproj.CoreCompileInputs.cache
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.exe
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.pdb
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLDAL.exe
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLDAL.pdb
+C:\C#\DVLD\DVLBLL\bin\Debug\DVLDAL.exe.config
+C:\C#\DVLD\DVLBLL\obj\Debug\DVLBLL.csproj.Up2Date
