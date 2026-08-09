@@ -37,5 +37,28 @@ namespace DVLDAL
 
             }
         }
+        public static string GetCountryName(int id )
+        {
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+                string sql = "select c.CountryName from Countries c where c.CountryID =@CountryID";
+                using (SqlCommand command = new SqlCommand(sql , connection))
+                {
+                    connection.Open();
+                    command.Parameters.AddWithValue("@CountryID", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            string ContryName = (string)reader["CountryName"];
+                            return ContryName;
+                        }
+                    }
+                }
+                return "not Found Country This Return from DAL";
+            
+            }
+
+        }
     }
 }

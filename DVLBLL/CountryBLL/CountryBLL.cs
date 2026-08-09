@@ -15,6 +15,10 @@ namespace DVLBLL.CountryBLL
         {
             return CountryDAL.GetAllCountry();
         }
+        public static string GetNameCountry(int id)
+        {
+            return CountryDAL.GetCountryName(id).ToString();
+        }
 
     }
 }

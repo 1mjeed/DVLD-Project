@@ -11,6 +11,7 @@ namespace DVLBLL
 
         public int UserID { get; set; }
         public int PersonID { get; set; }
+        public ManagePeopleBLL person; 
         public string UserName { get; set; }
         public string Password { get; set; }
         public bool IsActive { get; set; }
@@ -29,6 +30,7 @@ namespace DVLBLL
         {
             this.UserID = userID;
             this.PersonID = personID;
+            this.person = ManagePeopleBLL.FindPeopleById(personID);
             this.UserName = userName;
             this.Password = password;
             this.IsActive = isActive;
