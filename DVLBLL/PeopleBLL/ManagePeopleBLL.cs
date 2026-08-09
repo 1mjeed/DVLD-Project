@@ -84,6 +84,20 @@ namespace DVLBLL
                 return null ;
             }
         }
+        public static ManagePeopleBLL FindPeopleByNationalNo(string nationalNo)
+        {
+            int personID = -1;
+            string firstName = "", lastName = "", secondName = "", thirdName = "", address = "", email = "", phone = "", imagePath = "";
+            DateTime dateOfBirth = DateTime.Now.Date;
+            int gendor = 0, nationalityCountryID = -1;
+
+            if (ManagePeopleDAL.FindPeopleByNationalNo(nationalNo, ref personID, ref firstName, ref lastName, ref secondName, ref thirdName, ref dateOfBirth, ref gendor, ref address, ref email, ref phone, ref nationalityCountryID, ref imagePath))
+            {
+                return new ManagePeopleBLL(personID, nationalNo, firstName, lastName, secondName, thirdName, dateOfBirth, gendor, address, email, phone, imagePath, nationalityCountryID);
+            }
+
+            return null;
+        }
         public static bool IsExist(int id)
         {
             return ManagePeopleDAL.IsExist(id);
