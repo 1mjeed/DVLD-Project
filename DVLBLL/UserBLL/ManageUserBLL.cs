@@ -4,7 +4,7 @@ using System.Data;
 
 namespace DVLBLL
 {
-    public class User
+    public class ManageUserBLL
     {
         private enum enMode { AddNew = 0, Update = 1 }
         private enMode Mode = enMode.AddNew;
@@ -16,7 +16,7 @@ namespace DVLBLL
         public string Password { get; set; }
         public bool IsActive { get; set; }
 
-         public User()
+         public ManageUserBLL()
         {
             this.UserID = -1;
             this.PersonID = -1;
@@ -26,7 +26,7 @@ namespace DVLBLL
             Mode = enMode.AddNew;
         }
 
-         private User(int userID, int personID, string userName, string password, bool isActive)
+         private ManageUserBLL(int userID, int personID, string userName, string password, bool isActive)
         {
             this.UserID = userID;
             this.PersonID = personID;
@@ -44,7 +44,7 @@ namespace DVLBLL
              return UserDAL.GetAllUsers();
         }
 
-        public static User FindUserByID(int userID)
+        public static ManageUserBLL FindUserByID(int userID)
         {
              int personID = -1;
             string userName = "";
@@ -52,7 +52,7 @@ namespace DVLBLL
             bool isActive = false;
              if (UserDAL.GetUserInfoByUserID(userID, ref personID, ref userName, ref password, ref isActive))
             {
-                 return new User(userID, personID, userName, password, isActive);
+                 return new ManageUserBLL(userID, personID, userName, password, isActive);
             }
             else
             {
