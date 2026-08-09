@@ -177,7 +177,7 @@ namespace DVLDAL
 
         using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
         {
-             string sql = "SELECT * FROM Users";
+             string sql = "Select u.UserID ,u.PersonID,( p.FirstName + ' ' + p.SecondName + ' ' +p.ThirdName + ' ' +p.LastName) as FullName , u.Password , u.UserName , u.IsActive from Users u inner Join People p on u.PersonID = p.PersonID";
 
             using (SqlCommand command = new SqlCommand(sql, connection))
             {
@@ -226,5 +226,86 @@ namespace DVLDAL
             }
             return isFound;
         }
+        public static bool IsUserExist(string UserName)
+        {
+            bool isFound = false;
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+               string sql = "SELECT 1 FROM Users WHERE UserName = @UserName";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    try
+                    {
+                         connection.Open();
+                         object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            isFound = true; 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+            return isFound;
+        }
+        public static bool IsUserExistforPassword(string Password)
+        {
+            bool isFound = false;
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+               string sql = "SELECT 1 FROM Users WHERE Password = @Password";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Password", Password);
+                    try
+                    {
+                         connection.Open();
+                         object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            isFound = true; 
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+            return isFound;
+        }
+
+        public static bool ChangePassword(int id, string Password) 
+        {
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+                int rowEf= 0 ;
+                string sql = "Update Users set Password = @pass Where UserID = @UserID "; 
+                using(SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@pass" , Password);
+                    command.Parameters.AddWithValue("@UserID" , id);
+                    try
+                    {
+                        connection.Open();
+                       rowEf = command.ExecuteNonQuery();
+                        
+                    }
+                    catch (Exception ex) 
+                    {
+                        throw new Exception("Database Error: " + ex.Message);
+                    }
+                }
+                return (rowEf > 0);
+            }
+
+
+        }
+        
+
     }
 }

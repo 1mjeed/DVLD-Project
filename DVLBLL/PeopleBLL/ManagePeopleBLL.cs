@@ -46,7 +46,7 @@ namespace DVLBLL
             this.Gendor = 0;
             mode = Mode.addMode;
         }
-        public ManagePeopleBLL(int personID, string nationalNO, string firstName, string lastName, string secondName, string thirdName, DateTime dateOfBirth, int gendor, string address, string email, string phone, string imagePath, int nationalityCountryID)
+        private ManagePeopleBLL(int personID, string nationalNO, string firstName, string lastName, string secondName, string thirdName, DateTime dateOfBirth, int gendor, string address, string email, string phone, string imagePath, int nationalityCountryID)
         {
             PersonID = personID;
             NationalNO = nationalNO;

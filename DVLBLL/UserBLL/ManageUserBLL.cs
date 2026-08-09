@@ -6,10 +6,10 @@ namespace DVLBLL
 {
     public class User
     {
-        public enum enMode { AddNew = 0, Update = 1 }
-        public enMode Mode = enMode.AddNew;
+        private enum enMode { AddNew = 0, Update = 1 }
+        private enMode Mode = enMode.AddNew;
 
-         public int UserID { get; set; }
+        public int UserID { get; set; }
         public int PersonID { get; set; }
         public string UserName { get; set; }
         public string Password { get; set; }
@@ -58,15 +58,28 @@ namespace DVLBLL
             }
         }
 
-        public static bool IsExist(int userID)
+        public static bool IsUserExist(int userID)
         {
             return UserDAL.IsUserExist(userID);
+        }
+        public static bool IsUserExist(string UserName)
+        {
+            return UserDAL.IsUserExist(UserName);
+        }
+        public static bool IsUserExistforPassword(string Password)
+        {
+            return UserDAL.IsUserExist(Password);
         }
 
         public static bool DeleteUser(int userID)
         {
             return UserDAL.DeleteUser(userID);
         }
+        public static bool ChangePassword(int id, string password)
+        {
+            return UserDAL.ChangePassword(id, password);
+        }
+
         private bool _AddNewUser()
         {
              this.UserID = UserDAL.AddNewUser(this.PersonID, this.UserName, this.Password, this.IsActive);
