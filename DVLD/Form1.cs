@@ -37,5 +37,11 @@ using System.Windows.Forms;
             AddUpdateUser p = new AddUpdateUser();
             p.ShowDialog(); 
         }
+
+        private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            UserInformation p = new UserInformation(1);
+            p.ShowDialog();
+        }
     }
 }

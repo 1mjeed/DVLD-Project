@@ -107,6 +107,12 @@
     <Compile Include="User\UserCartControl.Designer.cs">
       <DependentUpon>UserCartControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\UserInformation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\UserInformation.Designer.cs">
+      <DependentUpon>UserInformation.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User\UserCartControl.resx">
       <DependentUpon>UserCartControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\UserInformation.resx">
+      <DependentUpon>UserInformation.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

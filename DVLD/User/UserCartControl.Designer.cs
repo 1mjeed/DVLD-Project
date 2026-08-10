@@ -65,8 +65,7 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Login Information";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
-            // 
+             // 
             // cartPersonInformation1
             // 
             this.cartPersonInformation1.BackColor = System.Drawing.SystemColors.Desktop;
