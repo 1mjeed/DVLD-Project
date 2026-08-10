@@ -41,16 +41,14 @@ namespace DVLD.User
             {
                 label1.Text = "Add New User";
                 this.Text = "Add New User";
-                _User = new ManageUserBLL();                 
-                btnSave.Enabled = false;
+                 btnSave.Enabled = false;
                 tabPage2.Enabled = false;
             }
             else
             {
                 label1.Text = "Update User";
-                this.Text = "Update User";
-
-                 btnSave.Enabled = true;
+                this.Text = "Update User"; 
+                btnSave.Enabled = true;
                 tabPage2.Enabled = true;
             }
         }
@@ -106,7 +104,22 @@ namespace DVLD.User
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
+            Saving(); 
+        }
+        private void Saving()
+        {
+            _User.PersonID = filterPersonInformation1.PersonID;
+            _User.UserName =  textBox1.Text; 
+            _User.Password = textBox2.Text; 
+            _User.IsActive = checkBox1.Checked ? true : false; 
+            if (_User.Save())
+            {
+                MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("We were unable to save the data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

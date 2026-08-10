@@ -101,6 +101,18 @@
     <Compile Include="User\AddUpdateUser.Designer.cs">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </Compile>
+    <Compile Include="User\ChangePasswordForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ChangePasswordForm.Designer.cs">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="User\ManageUsers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="User\ManageUsers.Designer.cs">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </Compile>
     <Compile Include="User\UserCartControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +159,12 @@
     <EmbeddedResource Include="User\AddUpdateUser.resx">
       <DependentUpon>AddUpdateUser.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User\ChangePasswordForm.resx">
+      <DependentUpon>ChangePasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User\ManageUsers.resx">
+      <DependentUpon>ManageUsers.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User\UserCartControl.resx">
       <DependentUpon>UserCartControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -172,5 +190,6 @@
       <Name>DVLBLL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

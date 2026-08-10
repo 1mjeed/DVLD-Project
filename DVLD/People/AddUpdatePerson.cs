@@ -53,5 +53,10 @@ namespace DVLD.People
             }
 
         }
+
+        private void informationPerson1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

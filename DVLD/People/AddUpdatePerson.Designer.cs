@@ -38,6 +38,7 @@
             this.informationPerson1.Name = "informationPerson1";
             this.informationPerson1.Size = new System.Drawing.Size(854, 336);
             this.informationPerson1.TabIndex = 0;
+            this.informationPerson1.Load += new System.EventHandler(this.informationPerson1_Load);
             // 
             // label1
             // 

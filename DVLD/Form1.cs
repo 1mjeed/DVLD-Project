@@ -34,7 +34,7 @@ using System.Windows.Forms;
 
         private void usersToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddUpdateUser p = new AddUpdateUser();
+            ManageUsers p = new ManageUsers();
             p.ShowDialog(); 
         }
 
@@ -42,6 +42,12 @@ using System.Windows.Forms;
         {
             UserInformation p = new UserInformation(1);
             p.ShowDialog();
+        }
+
+        private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ChangePasswordForm f = new ChangePasswordForm(1);
+            f.ShowDialog();
         }
     }
 }
