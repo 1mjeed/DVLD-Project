@@ -11,10 +11,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
  namespace DVLD
-{
+{   
     public partial class Form1 : Form
     {
-        public Form1()
+        private int idUser = DVLD.Classes.clsGlobal.CurrentUser.UserID; 
+         public Form1()
         {
             InitializeComponent();
         }
@@ -40,13 +41,21 @@ using System.Windows.Forms;
 
         private void currentUserInfoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            UserInformation p = new UserInformation(1);
+            UserInformation p = new UserInformation(idUser);
             p.ShowDialog();
         }
 
         private void changePasswordToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            ChangePasswordForm f = new ChangePasswordForm(1);
+            ChangePasswordForm f = new ChangePasswordForm(idUser);
+            f.ShowDialog();
+        }
+
+        private void sinOutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DVLD.Classes.clsGlobal.CurrentUser = null; 
+                this.Hide ();
+            LoginForm f = new LoginForm();
             f.ShowDialog();
         }
     }

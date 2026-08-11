@@ -120,6 +120,7 @@
             this.sinOutToolStripMenuItem.Name = "sinOutToolStripMenuItem";
             this.sinOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.sinOutToolStripMenuItem.Text = "Sin Out";
+            this.sinOutToolStripMenuItem.Click += new System.EventHandler(this.sinOutToolStripMenuItem_Click);
             // 
             // Form1
             // 

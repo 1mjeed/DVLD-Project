@@ -6,37 +6,38 @@ namespace DVLD.User
 {
     public partial class LoginForm : Form
     {
+        private int _id = -1 ;       
         public LoginForm()
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             login(); 
         }
         private bool checkedUserExist()
         {
-            bool isFound = false; 
-            string username = textBox1.Text; 
-            string password = maskedTextBox1.Text;
-            if (ManageUserBLL.Login(username , password))
-            {
-                isFound = true;
-            }
-
+            bool isFound = false;   
+            _id = ManageUserBLL.Login(textBox1.Text, maskedTextBox1.Text);
+            if ( _id!=-1) { isFound = true; }
             return isFound; 
         }
         private void login()
         {
+            if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(maskedTextBox1.Text))
+            {
+                MessageBox.Show("Please enter both Username and Password.", "Validation Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
             if (!checkedUserExist())
             {
-                MessageBox.Show("PassWord Or UserName not Valid");
-                return;
-
+                MessageBox.Show("Invalid Username or Password, or the account is inactive.", "Login Failed", MessageBoxButtons.OK, MessageBoxIcon.Error); return;
+                 
             }
             else
             {
+                DVLD.Classes.clsGlobal.CurrentUser = ManageUserBLL.FindUserByID(_id);
+                this.Hide();
                 Form1 ma = new Form1();
                 ma.ShowDialog();
                 this.Close();

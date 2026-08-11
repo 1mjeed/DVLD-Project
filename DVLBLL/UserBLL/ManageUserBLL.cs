@@ -81,8 +81,9 @@ namespace DVLBLL
         {
             return UserDAL.ChangePassword(id, password);
         }
-        public static bool Login(string username, string password)
+        public static int Login(string username, string password)
         {
+
             return UserDAL.Login(username, password);
         }
 

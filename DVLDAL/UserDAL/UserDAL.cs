@@ -278,12 +278,12 @@ namespace DVLDAL
             }
             return isFound;
         }
-        public static bool Login(string UserName , string Password )
+        public static int Login(string UserName , string Password )
         {
-            bool isFound = false;
+            
             using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
             {
-                string sql = "SELECT 1 FROM Users WHERE Password = @Password AND UserName = @UserName AND IsActive=1";
+                string sql = "SELECT UserID FROM Users WHERE Password = @Password AND UserName = @UserName AND IsActive=1";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@Password", Password);
@@ -292,9 +292,9 @@ namespace DVLDAL
                     {
                         connection.Open();
                         object result = command.ExecuteScalar();
-                        if (result != null)
+                        if (result != null && int.TryParse(result.ToString(), out int UserId))
                         {
-                            isFound = true;
+                            return UserId; 
                         }
                     }
                     catch (Exception ex)
@@ -303,7 +303,7 @@ namespace DVLDAL
                     }
                 }
             }
-            return isFound;
+            return -1;
         }
 
         public static bool ChangePassword(int id, string Password) 

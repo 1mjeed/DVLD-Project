@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DVLBLL;
+using System;
 using System.IO;
 using System.Windows.Forms;
 
@@ -59,5 +60,9 @@ namespace DVLD.Classes
             sourceFile = destinationFile;
             return true;
         }
+    }
+    public static class clsGlobal
+    {
+        public static ManageUserBLL CurrentUser { get; set; }
     }
 }
