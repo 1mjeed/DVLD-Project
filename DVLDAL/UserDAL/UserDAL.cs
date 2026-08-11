@@ -278,6 +278,33 @@ namespace DVLDAL
             }
             return isFound;
         }
+        public static bool Login(string UserName , string Password )
+        {
+            bool isFound = false;
+            using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+                string sql = "SELECT 1 FROM Users WHERE Password = @Password AND UserName = @UserName AND IsActive=1";
+                using (SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@Password", Password);
+                    command.Parameters.AddWithValue("@UserName", UserName);
+                    try
+                    {
+                        connection.Open();
+                        object result = command.ExecuteScalar();
+                        if (result != null)
+                        {
+                            isFound = true;
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine("Error: " + ex.Message);
+                    }
+                }
+            }
+            return isFound;
+        }
 
         public static bool ChangePassword(int id, string Password) 
         {
