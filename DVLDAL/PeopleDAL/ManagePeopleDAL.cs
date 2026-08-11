@@ -182,7 +182,10 @@ namespace DVLDAL
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            dt.Load(reader);
+                            if (reader.HasRows)
+                            {
+                                dt.Load(reader);
+                            }
                         }
                     }
                     catch (Exception ex)

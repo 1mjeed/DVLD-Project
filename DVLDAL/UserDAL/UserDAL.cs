@@ -15,12 +15,11 @@ namespace DVLDAL
             bool isFound = false;
             using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
             {
-                string sql = "Select * from Users Where UserID= @UserID"; 
-
-                using(SqlCommand command = new SqlCommand(sql,connection))
+                string sql = "Select * from Users Where UserID= @UserID";
+                using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@UserID", UserID);
-                    try  
+                    try
                     {
                         connection.Open();
                         using (SqlDataReader reader = command.ExecuteReader())
@@ -32,17 +31,11 @@ namespace DVLDAL
                                 UserName = (string)reader["UserName"];
                                 UserPassword = (string)reader["Password"];
                                 isActive = (bool)reader["IsActive"];
-
                             }
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        Console.WriteLine(ex.Message);
+                    catch (Exception ex) { }
                     }
-                }
-
-
             }
             return isFound; 
         }

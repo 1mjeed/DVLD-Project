@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationsBLL\ApplicationTypesBLL.cs" />
     <Compile Include="CountryBLL\CountryBLL.cs" />
     <Compile Include="PeopleBLL\ManagePeopleBLL.cs" />
     <Compile Include="Program.cs" />
