@@ -31,6 +31,11 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.pepoleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.detainLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pepoleToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.drivingsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.usersToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,11 +43,6 @@
             this.currentUserInfoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.changePasswordToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.sinOutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ggToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageApplicationsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.detainLicensesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageApplicationTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.manageTestTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -82,6 +82,37 @@
             this.pepoleToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.pepoleToolStripMenuItem.Text = "Applications";
             // 
+            // ggToolStripMenuItem
+            // 
+            this.ggToolStripMenuItem.Name = "ggToolStripMenuItem";
+            this.ggToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.ggToolStripMenuItem.Text = "Driving Licenses Services";
+            // 
+            // manageApplicationsToolStripMenuItem
+            // 
+            this.manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
+            this.manageApplicationsToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.manageApplicationsToolStripMenuItem.Text = "Manage Applications ";
+            // 
+            // detainLicensesToolStripMenuItem
+            // 
+            this.detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
+            this.detainLicensesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.detainLicensesToolStripMenuItem.Text = "Detain Licenses";
+            // 
+            // manageApplicationTypesToolStripMenuItem
+            // 
+            this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
+            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
+            this.manageApplicationTypesToolStripMenuItem.Click += new System.EventHandler(this.manageApplicationTypesToolStripMenuItem_Click);
+            // 
+            // manageTestTypesToolStripMenuItem
+            // 
+            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
+            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
+            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            // 
             // pepoleToolStripMenuItem1
             // 
             this.pepoleToolStripMenuItem1.Name = "pepoleToolStripMenuItem1";
@@ -116,53 +147,23 @@
             // currentUserInfoToolStripMenuItem
             // 
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             this.currentUserInfoToolStripMenuItem.Click += new System.EventHandler(this.currentUserInfoToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // sinOutToolStripMenuItem
             // 
             this.sinOutToolStripMenuItem.Name = "sinOutToolStripMenuItem";
-            this.sinOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.sinOutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
             this.sinOutToolStripMenuItem.Text = "Sin Out";
             this.sinOutToolStripMenuItem.Click += new System.EventHandler(this.sinOutToolStripMenuItem_Click);
-            // 
-            // ggToolStripMenuItem
-            // 
-            this.ggToolStripMenuItem.Name = "ggToolStripMenuItem";
-            this.ggToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.ggToolStripMenuItem.Text = "Driving Licenses Services";
-            // 
-            // manageApplicationsToolStripMenuItem
-            // 
-            this.manageApplicationsToolStripMenuItem.Name = "manageApplicationsToolStripMenuItem";
-            this.manageApplicationsToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.manageApplicationsToolStripMenuItem.Text = "Manage Applications ";
-            // 
-            // detainLicensesToolStripMenuItem
-            // 
-            this.detainLicensesToolStripMenuItem.Name = "detainLicensesToolStripMenuItem";
-            this.detainLicensesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.detainLicensesToolStripMenuItem.Text = "Detain Licenses";
-            // 
-            // manageApplicationTypesToolStripMenuItem
-            // 
-            this.manageApplicationTypesToolStripMenuItem.Name = "manageApplicationTypesToolStripMenuItem";
-            this.manageApplicationTypesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.manageApplicationTypesToolStripMenuItem.Text = "Manage Application Types";
-            // 
-            // manageTestTypesToolStripMenuItem
-            // 
-            this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
-            this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
-            this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
             // 
             // Form1
             // 

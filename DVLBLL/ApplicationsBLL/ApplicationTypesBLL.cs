@@ -1,17 +1,44 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using DVLDAL;
+using System;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using DVLDAL; 
-namespace DVLBLL 
+
+namespace DVLBLL
 {
-    public class ApplicationTypesBLL
-    {
-        public static DataTable GetAllType()
+    public class ApplicationTypeBLL
+    { 
+        public int ApplicationTypeID { get; set; }
+        public string ApplicationTypeTitle { get; set; }
+        public decimal ApplicationFees { get; set; }
+
+ 
+        private ApplicationTypeBLL(int id, string title, decimal fees)
+        {
+            this.ApplicationTypeID = id;
+            this.ApplicationTypeTitle = title;
+            this.ApplicationFees = fees;
+        }
+ 
+
+        public static DataTable GetAllApplicationTypes()
         {
             return ApplicationTypesDAL.GetAllType();
+        }
+        public static ApplicationTypeBLL Find(int id)
+        {
+            string title = "";
+            decimal fees = 0;            
+            if (ApplicationTypesDAL.GetApplicationTypeByID(id, ref title, ref fees))
+            {
+                 return new ApplicationTypeBLL(id, title, fees);
+            }
+            else
+            {
+                return null;
+            }
+        }     
+        public bool Save()
+        {            
+            return ApplicationTypesDAL.UpdateApplicationType(this.ApplicationTypeID, this.ApplicationTypeTitle, this.ApplicationFees);
         }
     }
 }

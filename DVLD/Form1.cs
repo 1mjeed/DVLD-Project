@@ -63,5 +63,11 @@ using System.Windows.Forms;
         {
 
         }
+
+        private void manageApplicationTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ManageApplicationTypes m = new ManageApplicationTypes();
+            m.ShowDialog();
+        }
     }
 }
