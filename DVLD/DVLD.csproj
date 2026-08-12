@@ -56,6 +56,12 @@
     <Compile Include="Applications\ManageApplicationTypes.Designer.cs">
       <DependentUpon>ManageApplicationTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\TestTypes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\TestTypes.Designer.cs">
+      <DependentUpon>TestTypes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\UpdateApplicationTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -145,6 +151,9 @@
     </Compile>
     <EmbeddedResource Include="Applications\ManageApplicationTypes.resx">
       <DependentUpon>ManageApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\TestTypes.resx">
+      <DependentUpon>TestTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\UpdateApplicationTypes.resx">
       <DependentUpon>UpdateApplicationTypes.cs</DependentUpon>
