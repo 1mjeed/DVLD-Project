@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient; 
 
-namespace DVLDAL.ApplicationDAL
+namespace DVLDAL 
 {
     public class TestTypesDAL
     {
@@ -19,9 +19,10 @@ namespace DVLDAL.ApplicationDAL
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@TestTypeID", id);
+                    connection.Open();
+
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        connection.Open();
                       title = (string)reader["TestTypeTitle"];
                       description = (string)reader["TestTypeDescription"];
                       fees = (decimal)reader["TestTypeFees"];
@@ -55,9 +56,24 @@ namespace DVLDAL.ApplicationDAL
             }
 
         }
-        public static bool UpdateTestType(int id )
+        public static bool UpdateTestType(int id, string title, string description, decimal fees)
         {
+            int rowEffective = 0; 
+             using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
+            {
+                string sql = "Update TestTypes set TestTypeTitle =@TestTypeTitle ,TestTypeDescription= @TestTypeDescription ,TestTypeFees=@TestTypeFees where TestTypeID = @TestTypeID ;"; 
+                using(SqlCommand command = new SqlCommand(sql, connection))
+                {
+                    command.Parameters.AddWithValue("@TestTypeTitle", title);
+                    command.Parameters.AddWithValue("@TestTypeID", id);
+                    command.Parameters.AddWithValue("@TestTypeDescription",  description);
+                    command.Parameters.AddWithValue("@TestTypeFees", fees);
+                    connection.Open();
+                    rowEffective = command.ExecuteNonQuery();
 
+                }
+                return (rowEffective > 0);
+            }
         }
 
 
