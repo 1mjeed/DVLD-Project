@@ -81,6 +81,7 @@
             this.pepoleToolStripMenuItem.Name = "pepoleToolStripMenuItem";
             this.pepoleToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.pepoleToolStripMenuItem.Text = "Applications";
+            this.pepoleToolStripMenuItem.Click += new System.EventHandler(this.pepoleToolStripMenuItem_Click);
             // 
             // ggToolStripMenuItem
             // 
@@ -112,6 +113,7 @@
             this.manageTestTypesToolStripMenuItem.Name = "manageTestTypesToolStripMenuItem";
             this.manageTestTypesToolStripMenuItem.Size = new System.Drawing.Size(268, 26);
             this.manageTestTypesToolStripMenuItem.Text = "Manage Test Types";
+            this.manageTestTypesToolStripMenuItem.Click += new System.EventHandler(this.manageTestTypesToolStripMenuItem_Click);
             // 
             // pepoleToolStripMenuItem1
             // 
@@ -147,21 +149,21 @@
             // currentUserInfoToolStripMenuItem
             // 
             this.currentUserInfoToolStripMenuItem.Name = "currentUserInfoToolStripMenuItem";
-            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.currentUserInfoToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.currentUserInfoToolStripMenuItem.Text = "Current User Info";
             this.currentUserInfoToolStripMenuItem.Click += new System.EventHandler(this.currentUserInfoToolStripMenuItem_Click);
             // 
             // changePasswordToolStripMenuItem
             // 
             this.changePasswordToolStripMenuItem.Name = "changePasswordToolStripMenuItem";
-            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.changePasswordToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.changePasswordToolStripMenuItem.Text = "Change Password";
             this.changePasswordToolStripMenuItem.Click += new System.EventHandler(this.changePasswordToolStripMenuItem_Click);
             // 
             // sinOutToolStripMenuItem
             // 
             this.sinOutToolStripMenuItem.Name = "sinOutToolStripMenuItem";
-            this.sinOutToolStripMenuItem.Size = new System.Drawing.Size(207, 26);
+            this.sinOutToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
             this.sinOutToolStripMenuItem.Text = "Sin Out";
             this.sinOutToolStripMenuItem.Click += new System.EventHandler(this.sinOutToolStripMenuItem_Click);
             // 

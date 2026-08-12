@@ -35,29 +35,14 @@ namespace DVLD.Applications
 
         private void button1_Click(object sender, EventArgs e)
         {
-            
-
-            if (_applicationTypeBLL.Save())
-            {
-                MessageBox.Show("Data saved successfully.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            else
-            {
-                MessageBox.Show("We were unable to save the data.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-             if (string.IsNullOrWhiteSpace(textBox1.Text) || string.IsNullOrWhiteSpace(textBox2.Text))
-            {
-                MessageBox.Show("الرجاء تعبئة جميع الحقول قبل الحفظ.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                return;
-            }
 
              if (!decimal.TryParse(textBox2.Text.Trim(), out decimal validFees))
             {
-                MessageBox.Show("الرجاء إدخال قيمة مالية صحيحة في حقل الرسوم.", "تنبيه", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Please enter a valid monetary value in the fees field.", "alert", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
              _applicationTypeBLL.ApplicationTypeTitle = textBox1.Text.Trim();
-            _applicationTypeBLL.ApplicationFees = validFees;
+             _applicationTypeBLL.ApplicationFees = validFees;
 
              try
             {

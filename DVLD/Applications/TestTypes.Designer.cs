@@ -46,7 +46,7 @@
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(476, 197);
+            this.dataGridView1.Size = new System.Drawing.Size(572, 197);
             this.dataGridView1.TabIndex = 5;
             // 
             // contextMenuStrip1
@@ -62,6 +62,7 @@
             this.editToolStripMenuItem.Name = "editToolStripMenuItem";
             this.editToolStripMenuItem.Size = new System.Drawing.Size(104, 24);
             this.editToolStripMenuItem.Text = "Edit";
+            this.editToolStripMenuItem.Click += new System.EventHandler(this.editToolStripMenuItem_Click);
             // 
             // label1
             // 
@@ -82,6 +83,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TestTypes";
             this.Text = "TestTypes";
+            this.Load += new System.EventHandler(this.TestTypes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);

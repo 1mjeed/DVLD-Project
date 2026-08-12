@@ -15,7 +15,7 @@ namespace DVLDAL
             bool Isfound = false;
             using (SqlConnection connection = new SqlConnection(DataAccessSettings.connectionString))
             {
-                string sql = "select * from TestTypes t where t.TestTypeID = @TestTypeID";
+                string sql = "select t.TestTypeID , t.TestTypeTitle , t.TestTypeDescription , t.TestTypeFees from TestTypes t  where t.TestTypeID = @TestTypeID";
                 using (SqlCommand command = new SqlCommand(sql, connection))
                 {
                     command.Parameters.AddWithValue("@TestTypeID", id);
@@ -23,10 +23,14 @@ namespace DVLDAL
 
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                      title = (string)reader["TestTypeTitle"];
-                      description = (string)reader["TestTypeDescription"];
-                      fees = (decimal)reader["TestTypeFees"];
-                        Isfound = true;
+                        if (reader.Read()) 
+                        {
+                            title = (string)reader["TestTypeTitle"];
+                            description = (string)reader["TestTypeDescription"];
+                            fees = (decimal)reader["TestTypeFees"];
+                            Isfound = true;
+                        }
+                      
                     }
 
                 }

@@ -1,4 +1,5 @@
-﻿using DVLD.People;
+﻿using DVLD.Applications;
+using DVLD.People;
 using DVLD.User;
 
 using System;
@@ -68,6 +69,17 @@ using System.Windows.Forms;
         {
             ManageApplicationTypes m = new ManageApplicationTypes();
             m.ShowDialog();
+        }
+
+        private void pepoleToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void manageTestTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            TestTypes ty = new TestTypes();
+            ty.ShowDialog();
         }
     }
 }

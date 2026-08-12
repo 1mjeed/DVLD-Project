@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,11 +20,29 @@ namespace DVLBLL
             this.title = title;
             this.description = description;
             this.Fees = Fees;
-
         }
-        public static bool GetApplicationTypeByID(int id, ref string title, ref string description, ref decimal fees)
+        public static TestTypesBLL GetTypeByID(int id)
         {
-            return TestTypesDAL.GetApplicationTypeByID(id, ref title, ref description, ref fees);
-        } 
+            string titel = "", description = ""; decimal fees = 0;
+            if (TestTypesDAL.GetTestTypeByID(id, ref titel, ref description, ref fees)) {
+                return new TestTypesBLL(id , titel , description , fees);
             }
+            else
+            {
+                return null; 
+            }
+        }
+        public static DataTable GetAllInfo()
+        {
+            return TestTypesDAL.GetAllInfo();
+        }
+        private bool _UpdateTestType()
+        {
+            return TestTypesDAL.UpdateTestType(this.ID , this.title, this.description , this.Fees);
+        }
+        public bool Save()
+        {
+            return _UpdateTestType(); 
+        }
+    }
 }
