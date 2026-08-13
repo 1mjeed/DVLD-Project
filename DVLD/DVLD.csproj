@@ -56,6 +56,12 @@
     <Compile Include="Applications\ManageApplicationTypes.Designer.cs">
       <DependentUpon>ManageApplicationTypes.cs</DependentUpon>
     </Compile>
+    <Compile Include="Applications\NewLocalDrivingApplication.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\NewLocalDrivingApplication.Designer.cs">
+      <DependentUpon>NewLocalDrivingApplication.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\TestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </Compile>
     <EmbeddedResource Include="Applications\ManageApplicationTypes.resx">
       <DependentUpon>ManageApplicationTypes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\NewLocalDrivingApplication.resx">
+      <DependentUpon>NewLocalDrivingApplication.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\TestTypes.resx">
       <DependentUpon>TestTypes.cs</DependentUpon>

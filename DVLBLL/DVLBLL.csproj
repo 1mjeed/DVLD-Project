@@ -49,6 +49,7 @@
     <Compile Include="ApplicationsBLL\ApplicationTypesBLL.cs" />
     <Compile Include="ApplicationsBLL\TestTypesBLL.cs" />
     <Compile Include="CountryBLL\CountryBLL.cs" />
+    <Compile Include="License\LicenseClassesBLL.cs" />
     <Compile Include="PeopleBLL\ManagePeopleBLL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

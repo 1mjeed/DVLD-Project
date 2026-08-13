@@ -81,5 +81,16 @@ using System.Windows.Forms;
             TestTypes ty = new TestTypes();
             ty.ShowDialog();
         }
+
+        private void ggToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            NewLocalDrivingApplication lic = new NewLocalDrivingApplication();
+            lic.ShowDialog();
+        }
     }
 }

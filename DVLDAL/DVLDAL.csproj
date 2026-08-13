@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDAL\ApplicationTypesDAL.cs" />
+    <Compile Include="ApplicationDAL\clsApplicationData.cs" />
     <Compile Include="ApplicationDAL\TestTypesDAL.cs" />
     <Compile Include="CountryDAL\CountryDAL.cs" />
     <Compile Include="DataAccessSettings.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\LicenseClassesDAL.cs" />
     <Compile Include="PeopleDAL\ManagePeopleDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
