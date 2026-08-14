@@ -46,14 +46,14 @@ namespace DVLD
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
             int selectedPersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            UpdateApplicationTypes updateUserForm = new UpdateApplicationTypes(selectedPersonId);
-            updateUserForm.ShowDialog();
+          //  UpdateApplicationTypes updateUserForm = new UpdateApplicationTypes(selectedPersonId);
+          //  updateUserForm.ShowDialog();
             _RefreshUserList();
         }
         private void _RefreshUserList()
         {
-            DataTable dtApplicationType = ApplicationTypeBLL.GetAllApplicationTypes();
-            dataGridView1.DataSource = dtApplicationType;
+        //    DataTable dtApplicationType = ApplicationTypeBLL.GetAllApplicationTypes();
+            //dataGridView1.DataSource = dtApplicationType;
         }
         
     }

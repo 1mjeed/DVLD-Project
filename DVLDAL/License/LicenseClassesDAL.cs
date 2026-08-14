@@ -10,6 +10,7 @@ namespace DVLDAL
 {
     public class LicenseClassesDAL
     {
+        // I can Dleleted it  
         public static DataTable AllClassesInfo()
         {
             DataTable dt = new DataTable();

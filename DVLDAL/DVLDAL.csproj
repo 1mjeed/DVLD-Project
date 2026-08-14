@@ -56,6 +56,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\clsLocalDrivingLicenseApplicationData.cs" />
     <Compile Include="License\LicenseClassesDAL.cs" />
     <Compile Include="PeopleDAL\ManagePeopleDAL.cs" />
     <Compile Include="Program.cs" />

@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationsBLL\Application.cs" />
+    <Compile Include="ApplicationsBLL\clsApplication.cs" />
     <Compile Include="ApplicationsBLL\TestTypesBLL.cs" />
     <Compile Include="CountryBLL\CountryBLL.cs" />
     <Compile Include="License\LicenseClassesBLL.cs" />

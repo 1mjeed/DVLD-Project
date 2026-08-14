@@ -68,12 +68,6 @@
     <Compile Include="Applications\TestTypes.Designer.cs">
       <DependentUpon>TestTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\UpdateApplicationTypes.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Applications\UpdateApplicationTypes.Designer.cs">
-      <DependentUpon>UpdateApplicationTypes.cs</DependentUpon>
-    </Compile>
     <Compile Include="Applications\UpdateTestTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,9 +163,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\TestTypes.resx">
       <DependentUpon>TestTypes.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Applications\UpdateApplicationTypes.resx">
-      <DependentUpon>UpdateApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Applications\UpdateTestTypes.resx">
       <DependentUpon>UpdateTestTypes.cs</DependentUpon>
