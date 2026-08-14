@@ -46,7 +46,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDAL\ApplicationTypesDAL.cs" />
     <Compile Include="ApplicationDAL\clsApplicationData.cs" />
     <Compile Include="ApplicationDAL\TestTypesDAL.cs" />
     <Compile Include="CountryDAL\CountryDAL.cs" />
