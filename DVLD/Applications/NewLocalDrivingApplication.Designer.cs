@@ -30,20 +30,21 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.filterPersonInformation1 = new DVLD.FilterPersonInformation();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label5 = new System.Windows.Forms.Label();
+            this.cbLicenseClass = new System.Windows.Forms.ComboBox();
+            this.laFees = new System.Windows.Forms.Label();
+            this.laCreatedBy = new System.Windows.Forms.Label();
+            this.labelCreatedBy = new System.Windows.Forms.Label();
+            this.laDate = new System.Windows.Forms.Label();
+            this.laid = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.Gendor = new System.Windows.Forms.Label();
-            this.filterPersonInformation1 = new DVLD.FilterPersonInformation();
             this.butNext = new System.Windows.Forms.Button();
             this.butSave = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -70,15 +71,26 @@
             this.tabPage1.Text = "Person Info";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // filterPersonInformation1
+            // 
+            this.filterPersonInformation1.BackColor = System.Drawing.SystemColors.Desktop;
+            this.filterPersonInformation1.FilterEnabled = true;
+            this.filterPersonInformation1.Location = new System.Drawing.Point(6, 6);
+            this.filterPersonInformation1.Name = "filterPersonInformation1";
+            this.filterPersonInformation1.ShowAddPerson = true;
+            this.filterPersonInformation1.Size = new System.Drawing.Size(821, 359);
+            this.filterPersonInformation1.TabIndex = 0;
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.RosyBrown;
-            this.tabPage2.Controls.Add(this.comboBox1);
-            this.tabPage2.Controls.Add(this.label8);
-            this.tabPage2.Controls.Add(this.label7);
-            this.tabPage2.Controls.Add(this.label6);
-            this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.label5);
+            this.tabPage2.Controls.Add(this.lblTitle);
+            this.tabPage2.Controls.Add(this.cbLicenseClass);
+            this.tabPage2.Controls.Add(this.laFees);
+            this.tabPage2.Controls.Add(this.laCreatedBy);
+            this.tabPage2.Controls.Add(this.labelCreatedBy);
+            this.tabPage2.Controls.Add(this.laDate);
+            this.tabPage2.Controls.Add(this.laid);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -88,17 +100,67 @@
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage2.Size = new System.Drawing.Size(830, 361);
             this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Login INfo";
+            this.tabPage2.Text = "Application Info";
             // 
-            // label5
+            // cbLicenseClass
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(208, 57);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(35, 18);
-            this.label5.TabIndex = 31;
-            this.label5.Text = "???";
+            this.cbLicenseClass.FormattingEnabled = true;
+            this.cbLicenseClass.Location = new System.Drawing.Point(197, 132);
+            this.cbLicenseClass.Name = "cbLicenseClass";
+            this.cbLicenseClass.Size = new System.Drawing.Size(170, 24);
+            this.cbLicenseClass.TabIndex = 39;
+            // 
+            // laFees
+            // 
+            this.laFees.AutoSize = true;
+            this.laFees.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laFees.ForeColor = System.Drawing.Color.Red;
+            this.laFees.Location = new System.Drawing.Point(190, 175);
+            this.laFees.Name = "laFees";
+            this.laFees.Size = new System.Drawing.Size(35, 18);
+            this.laFees.TabIndex = 38;
+            this.laFees.Text = "???";
+            // 
+            // laCreatedBy
+            // 
+            this.laCreatedBy.AutoSize = true;
+            this.laCreatedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laCreatedBy.ForeColor = System.Drawing.Color.Red;
+            this.laCreatedBy.Location = new System.Drawing.Point(190, 216);
+            this.laCreatedBy.Name = "laCreatedBy";
+            this.laCreatedBy.Size = new System.Drawing.Size(35, 18);
+            this.laCreatedBy.TabIndex = 37;
+            this.laCreatedBy.Text = "???";
+            // 
+            // labelCreatedBy
+            // 
+            this.labelCreatedBy.AutoSize = true;
+            this.labelCreatedBy.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelCreatedBy.Location = new System.Drawing.Point(41, 216);
+            this.labelCreatedBy.Name = "labelCreatedBy";
+            this.labelCreatedBy.Size = new System.Drawing.Size(96, 18);
+            this.labelCreatedBy.TabIndex = 36;
+            this.labelCreatedBy.Text = "CreatedBy :";
+            // 
+            // laDate
+            // 
+            this.laDate.AutoSize = true;
+            this.laDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laDate.Location = new System.Drawing.Point(208, 89);
+            this.laDate.Name = "laDate";
+            this.laDate.Size = new System.Drawing.Size(35, 18);
+            this.laDate.TabIndex = 35;
+            this.laDate.Text = "???";
+            // 
+            // laid
+            // 
+            this.laid.AutoSize = true;
+            this.laid.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.laid.Location = new System.Drawing.Point(209, 57);
+            this.laid.Name = "laid";
+            this.laid.Size = new System.Drawing.Size(35, 18);
+            this.laid.TabIndex = 31;
+            this.laid.Text = "???";
             // 
             // label4
             // 
@@ -140,16 +202,6 @@
             this.Gendor.TabIndex = 26;
             this.Gendor.Text = "D.LApplication ID :";
             // 
-            // filterPersonInformation1
-            // 
-            this.filterPersonInformation1.BackColor = System.Drawing.SystemColors.Desktop;
-            this.filterPersonInformation1.FilterEnabled = true;
-            this.filterPersonInformation1.Location = new System.Drawing.Point(6, 6);
-            this.filterPersonInformation1.Name = "filterPersonInformation1";
-            this.filterPersonInformation1.ShowAddPerson = true;
-            this.filterPersonInformation1.Size = new System.Drawing.Size(821, 359);
-            this.filterPersonInformation1.TabIndex = 0;
-            // 
             // butNext
             // 
             this.butNext.BackColor = System.Drawing.Color.IndianRed;
@@ -159,6 +211,7 @@
             this.butNext.TabIndex = 7;
             this.butNext.Text = "Next";
             this.butNext.UseVisualStyleBackColor = false;
+//            this.butNext.Click += new System.EventHandler(this.butNext_Click);
             // 
             // butSave
             // 
@@ -168,57 +221,16 @@
             this.butSave.TabIndex = 8;
             this.butSave.Text = "Save";
             this.butSave.UseVisualStyleBackColor = true;
-            this.butSave.Click += new System.EventHandler(this.butSave_Click);
+           // this.butSave.Click += new System.EventHandler(this.butSave_Click);
             // 
-            // label1
+            // lblTitle
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(208, 89);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 18);
-            this.label1.TabIndex = 35;
-            this.label1.Text = "???";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(41, 216);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(142, 18);
-            this.label6.TabIndex = 36;
-            this.label6.Text = "Application Fees :";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Red;
-            this.label7.Location = new System.Drawing.Point(190, 210);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 18);
-            this.label7.TabIndex = 37;
-            this.label7.Text = "???";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Red;
-            this.label8.Location = new System.Drawing.Point(190, 175);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 18);
-            this.label8.TabIndex = 38;
-            this.label8.Text = "???";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(197, 132);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(170, 24);
-            this.comboBox1.TabIndex = 39;
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(347, 25);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(44, 16);
+            this.lblTitle.TabIndex = 40;
+            this.lblTitle.Text = "label1";
             // 
             // NewLocalDrivingApplication
             // 
@@ -245,17 +257,18 @@
         private System.Windows.Forms.TabPage tabPage1;
         private FilterPersonInformation filterPersonInformation1;
         private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label laid;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Gendor;
         private System.Windows.Forms.Button butNext;
         private System.Windows.Forms.Button butSave;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label laDate;
+        private System.Windows.Forms.ComboBox cbLicenseClass;
+        private System.Windows.Forms.Label laFees;
+        private System.Windows.Forms.Label laCreatedBy;
+        private System.Windows.Forms.Label labelCreatedBy;
+        private System.Windows.Forms.Label lblTitle;
     }
 }

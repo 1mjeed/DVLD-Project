@@ -46,9 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationsBLL\ApplicationTypeBLL.cs" />
     <Compile Include="ApplicationsBLL\clsApplication.cs" />
     <Compile Include="ApplicationsBLL\TestTypesBLL.cs" />
     <Compile Include="CountryBLL\CountryBLL.cs" />
+    <Compile Include="License\clsLocalDrivingLicenseApplication.cs" />
     <Compile Include="License\LicenseClassesBLL.cs" />
     <Compile Include="PeopleBLL\ManagePeopleBLL.cs" />
     <Compile Include="Program.cs" />
