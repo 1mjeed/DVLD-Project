@@ -50,6 +50,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Applications\frmEditApplicationType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Applications\frmEditApplicationType.Designer.cs">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseApplicationInfo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Applications\Local Driving License\ctrlDrivingLicenseApplicationInfo.Designer.cs">
+      <DependentUpon>ctrlDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Applications\ManageApplicationTypes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,11 +80,11 @@
     <Compile Include="Applications\TestTypes.Designer.cs">
       <DependentUpon>TestTypes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Applications\UpdateTestTypes.cs">
+    <Compile Include="Applications\frmEditTestType.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Applications\UpdateTestTypes.Designer.cs">
-      <DependentUpon>UpdateTestTypes.cs</DependentUpon>
+    <Compile Include="Applications\frmEditTestType.Designer.cs">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
     </Compile>
     <Compile Include="Classes.cs" />
     <Compile Include="Form1.cs">
@@ -155,6 +167,12 @@
     <Compile Include="User\UserInformation.Designer.cs">
       <DependentUpon>UserInformation.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Applications\frmEditApplicationType.resx">
+      <DependentUpon>frmEditApplicationType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Applications\Local Driving License\ctrlDrivingLicenseApplicationInfo.resx">
+      <DependentUpon>ctrlDrivingLicenseApplicationInfo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Applications\ManageApplicationTypes.resx">
       <DependentUpon>ManageApplicationTypes.cs</DependentUpon>
     </EmbeddedResource>
@@ -164,8 +182,8 @@
     <EmbeddedResource Include="Applications\TestTypes.resx">
       <DependentUpon>TestTypes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Applications\UpdateTestTypes.resx">
-      <DependentUpon>UpdateTestTypes.cs</DependentUpon>
+    <EmbeddedResource Include="Applications\frmEditTestType.resx">
+      <DependentUpon>frmEditTestType.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

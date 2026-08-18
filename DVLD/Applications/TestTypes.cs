@@ -6,6 +6,8 @@ namespace DVLD.Applications
 {
     public partial class TestTypes : Form
     {
+        private clsTestType.enTestType _TestTypeID = clsTestType.enTestType.VisionTest;
+
         public TestTypes()
         {
             InitializeComponent();
@@ -17,14 +19,14 @@ namespace DVLD.Applications
         }
         private void GetAllInfo()
         {
-            dataGridView1.DataSource = TestTypesBLL.GetAllInfo();
+            dataGridView1.DataSource = clsTestType.GetAllTestTypes();
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int selectedPersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            _TestTypeID = (clsTestType.enTestType)Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
 
-            UpdateTestTypes test = new UpdateTestTypes(selectedPersonId);
+            frmEditTestType test = new frmEditTestType(_TestTypeID);
             test.Show();
             GetAllInfo();
         }

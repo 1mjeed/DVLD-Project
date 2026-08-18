@@ -1,5 +1,4 @@
 ﻿using DVLBLL;
-using DVLBLL.License;
 using DVLD.Classes;
 using System;
 using System.Data;
@@ -28,26 +27,26 @@ namespace DVLD.Applications
         {
             _LoadData();
         }
-        private void _FillLicenseClassesInComboBox()
-        {
-            DataTable dtClasses = LicenseClassesBLL.AllClassesInfo();
-            cbLicenseClass.DataSource = dtClasses;
-            cbLicenseClass.DisplayMember = "ClassName";
-            cbLicenseClass.ValueMember = "LicenseClassID";
+        //private void _FillLicenseClassesInComboBox()
+        //{
+        //   // DataTable dtClasses = LicenseClassesBLL.AllClassesInfo();
+        //   // cbLicenseClass.DataSource = dtClasses;
+        //    cbLicenseClass.DisplayMember = "ClassName";
+        //    cbLicenseClass.ValueMember = "LicenseClassID";
 
            
-        }
+        //}
         private void _loadLa()
         {
             laDate.Text = DateTime.Now.ToShortDateString();
             laCreatedBy.Text = ManageUserBLL.FindUserByID(clsGlobal.CurrentUser.UserID).UserName.ToString();
-            laFees.Text = ApplicationTypeBLL.Find((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationFees.ToString();
+            laFees.Text = clsApplicationType.Find((int)clsApplication.enApplicationType.NewDrivingLicense).ApplicationFees.ToString();
         }
 
         private void _LoadData()
         {
             _loadLa();
-             _FillLicenseClassesInComboBox();
+            // _FillLicenseClassesInComboBox();
              if (_Mode == enMode.AddNew)
             {
                 lblTitle.Text = "New Local Driving License Application";

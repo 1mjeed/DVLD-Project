@@ -4,6 +4,8 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DVLBLL.ApplicationsBLL;
+using DVLDAL; 
 
 namespace DVLBLL 
 {
@@ -15,12 +17,12 @@ namespace DVLBLL
 
         public int LocalDrivingLicenseApplicationID { set; get; }
         public int LicenseClassID { set; get; }
-        public LicenseClassesBLL LicenseClassInfo;
+        public clsLicenseClass LicenseClassInfo;
         public string PersonFullName
         {
             get
             {
-                return base.PersonInfo.FirstName + " " + base.PersonInfo.LastName + " " + base.PersonInfo.ThirdName;
+                return ManagePeopleBLL.FindPeopleById(ApplicantPersonID).FullName;
             }
 
         }
@@ -39,14 +41,14 @@ namespace DVLBLL
         private clsLocalDrivingLicenseApplication(int LocalDrivingLicenseApplicationID, int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate, int ApplicationTypeID,
              enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
-             decimal PaidFees, int CreatedByUserID, int LicenseClassID)
+             float PaidFees, int CreatedByUserID, int LicenseClassID)
 
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID; ;
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;
             this.ApplicationDate = ApplicationDate;
-            this.ApplicationTypeID = ApplicationTypeID;
+            this.ApplicationTypeID = (int)ApplicationTypeID;
             this.ApplicationStatus = ApplicationStatus;
             this.LastStatusDate = LastStatusDate;
             this.PaidFees = PaidFees;
@@ -187,79 +189,79 @@ namespace DVLBLL
 
         }
 
-        public bool DoesPassTestType(TestTypesBLL.enTestType TestTypeID)
+        public bool DoesPassTestType(clsTestType.enTestType TestTypeID)
 
         {
             return clsLocalDrivingLicenseApplicationData.DoesPassTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public bool DoesPassPreviousTest(TestTypesBLL.enTestType CurrentTestType)
+        public bool DoesPassPreviousTest(clsTestType.enTestType CurrentTestType)
         {
 
             switch (CurrentTestType)
             {
-                case TestTypesBLL.enTestType.VisionTest:
+                case clsTestType.enTestType.VisionTest:
                     return true;
 
-                case TestTypesBLL.enTestType.WrittenTest:                   
-                    return this.DoesPassTestType(TestTypesBLL.enTestType.VisionTest);
+                case clsTestType.enTestType.WrittenTest:                   
+                    return this.DoesPassTestType(clsTestType.enTestType.VisionTest);
 
 
-                case TestTypesBLL.enTestType.StreetTest: 
-                    return this.DoesPassTestType(TestTypesBLL.enTestType.WrittenTest);
+                case clsTestType.enTestType.StreetTest: 
+                    return this.DoesPassTestType(clsTestType.enTestType.WrittenTest);
 
                 default:
                     return false;
             }
         }
 
-        public static bool DoesPassTestType(int LocalDrivingLicenseApplicationID, TestTypesBLL.enTestType TestTypeID)
+        public static bool DoesPassTestType(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.DoesPassTestType(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public bool DoesAttendTestType(TestTypesBLL.enTestType TestTypeID)
+        public bool DoesAttendTestType(clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.DoesAttendTestType(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public byte TotalTrialsPerTest(TestTypesBLL.enTestType TestTypeID)
+        public byte TotalTrialsPerTest(clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public static byte TotalTrialsPerTest(int LocalDrivingLicenseApplicationID, TestTypesBLL.enTestType TestTypeID)
+        public static byte TotalTrialsPerTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public static bool AttendedTest(int LocalDrivingLicenseApplicationID, TestTypesBLL.enTestType TestTypeID)
+        public static bool AttendedTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(LocalDrivingLicenseApplicationID, (int)TestTypeID) > 0;
         }
 
-        public bool AttendedTest(TestTypesBLL.enTestType TestTypeID)
+        public bool AttendedTest(clsTestType.enTestType TestTypeID)
         {
             return clsLocalDrivingLicenseApplicationData.TotalTrialsPerTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID) > 0;
         }
 
-        public static bool IsThereAnActiveScheduledTest(int LocalDrivingLicenseApplicationID, TestTypesBLL.enTestType TestTypeID)
+        public static bool IsThereAnActiveScheduledTest(int LocalDrivingLicenseApplicationID, clsTestType.enTestType TestTypeID)
         {
 
             return clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        public bool IsThereAnActiveScheduledTest(TestTypesBLL.enTestType TestTypeID)
+        public bool IsThereAnActiveScheduledTest(clsTestType.enTestType TestTypeID)
 
         {
 
             return clsLocalDrivingLicenseApplicationData.IsThereAnActiveScheduledTest(this.LocalDrivingLicenseApplicationID, (int)TestTypeID);
         }
 
-        //public TestTypesBLL GetLastTestPerTestType(TestTypesBLL.enTestType TestTypeID)
-        //{
-        //    return TestTypesBLL.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
-        //}
+        public clsTest GetLastTestPerTestType(clsTestType.enTestType TestTypeID)
+        {
+            return clsTest.FindLastTestPerPersonAndLicenseClass(this.ApplicantPersonID, this.LicenseClassID, TestTypeID);
+        }
 
         public byte GetPassedTestCount()
         {

@@ -92,5 +92,10 @@ using System.Windows.Forms;
             NewLocalDrivingApplication lic = new NewLocalDrivingApplication();
             lic.ShowDialog();
         }
+
+        private void localDrivingApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

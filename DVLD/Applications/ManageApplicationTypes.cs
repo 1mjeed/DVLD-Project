@@ -1,20 +1,14 @@
 ﻿using DVLBLL;
 using DVLD.Applications;
-using DVLD.User;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace DVLD 
 {
     public partial class ManageApplicationTypes : Form
     {
+        private DataTable _dtAllApplicationTypes;
         public ManageApplicationTypes()
         {
             InitializeComponent();
@@ -22,39 +16,26 @@ namespace DVLD
 
         private void ManageApplicationTypes_Load(object sender, EventArgs e)
         {
-            _RefreshApplicationTypesList(); 
-        }
-        private void _RefreshApplicationTypesList()
-        {
-            try
-            {  
-                _RefreshUserList();
-
-            }
-            catch (Exception ex) 
+            _dtAllApplicationTypes = clsApplicationType.GetAllApplicationTypes();
+            dataGridView1.DataSource = _dtAllApplicationTypes;
+             if (_dtAllApplicationTypes != null && _dtAllApplicationTypes.Rows.Count > 0)
             {
-                MessageBox.Show(" Database connection issue – details :  " + ex.Message, "System error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                 dataGridView1.Columns["ApplicationTypeID"].HeaderText = "ID";
+                dataGridView1.Columns["ApplicationTypeID"].Width = 110;
+
+                dataGridView1.Columns["ApplicationTypeTitle"].HeaderText = "Title";
+                dataGridView1.Columns["ApplicationTypeTitle"].Width = 400;
+
+                dataGridView1.Columns["ApplicationFees"].HeaderText = "Fees";
+                dataGridView1.Columns["ApplicationFees"].Width = 100;
             }
-            
-        }
-
-        private void contextMenuStrip1_Opening(object sender, CancelEventArgs e)
-        {
-
         }
 
         private void editToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int selectedPersonId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-          //  UpdateApplicationTypes updateUserForm = new UpdateApplicationTypes(selectedPersonId);
-          //  updateUserForm.ShowDialog();
-            _RefreshUserList();
-        }
-        private void _RefreshUserList()
-        {
-        //    DataTable dtApplicationType = ApplicationTypeBLL.GetAllApplicationTypes();
-            //dataGridView1.DataSource = dtApplicationType;
-        }
-        
+            frmEditApplicationType frm = new frmEditApplicationType((int)dataGridView1.CurrentRow.Cells[0].Value);
+            frm.ShowDialog();
+            ManageApplicationTypes_Load(null, null);
+        } 
     }
 }

@@ -60,6 +60,22 @@ namespace DVLBLL
             }
         }
 
+        public static ManageUserBLL FindByPersonID(int PersonID)
+        {
+            int UserID = -1;
+            string UserName = "", Password = "";
+            bool IsActive = false;
+
+            bool IsFound = UserDAL.GetUserInfoByPersonID
+                                (PersonID, ref UserID, ref UserName, ref Password, ref IsActive);
+
+            if (IsFound)
+                //we return new object of that User with the right data
+                return new ManageUserBLL(UserID, UserID, UserName, Password, IsActive);
+            else
+                return null;
+        }
+
         public static bool IsUserExist(int userID)
         {
             return UserDAL.IsUserExist(userID);

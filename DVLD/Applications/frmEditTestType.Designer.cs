@@ -1,6 +1,6 @@
 ﻿namespace DVLD 
 {
-    partial class UpdateTestTypes
+    partial class frmEditTestType
     {
         /// <summary>
         /// Required designer variable.
@@ -29,14 +29,14 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblTestTypeID = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtFees = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTitle = new System.Windows.Forms.TextBox();
             this.name = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDescription = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -48,17 +48,17 @@
             this.button1.TabIndex = 37;
             this.button1.Text = "Save";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+           // this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // label4
+            // lblTestTypeID
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(335, 148);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(35, 18);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "???";
+            this.lblTestTypeID.AutoSize = true;
+            this.lblTestTypeID.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTestTypeID.Location = new System.Drawing.Point(335, 148);
+            this.lblTestTypeID.Name = "lblTestTypeID";
+            this.lblTestTypeID.Size = new System.Drawing.Size(35, 18);
+            this.lblTestTypeID.TabIndex = 36;
+            this.lblTestTypeID.Text = "???";
             // 
             // label3
             // 
@@ -70,12 +70,12 @@
             this.label3.TabIndex = 35;
             this.label3.Text = "ID : ";
             // 
-            // textBox2
+            // txtFees
             // 
-            this.textBox2.Location = new System.Drawing.Point(338, 306);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(132, 22);
-            this.textBox2.TabIndex = 34;
+            this.txtFees.Location = new System.Drawing.Point(338, 306);
+            this.txtFees.Name = "txtFees";
+            this.txtFees.Size = new System.Drawing.Size(132, 22);
+            this.txtFees.TabIndex = 34;
             // 
             // label2
             // 
@@ -87,12 +87,12 @@
             this.label2.TabIndex = 33;
             this.label2.Text = "Fees : ";
             // 
-            // textBox1
+            // txtTitle
             // 
-            this.textBox1.Location = new System.Drawing.Point(338, 199);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 22);
-            this.textBox1.TabIndex = 32;
+            this.txtTitle.Location = new System.Drawing.Point(338, 199);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(132, 22);
+            this.txtTitle.TabIndex = 32;
             // 
             // name
             // 
@@ -115,12 +115,12 @@
             this.label1.TabIndex = 30;
             this.label1.Text = "Update Test Type";
             // 
-            // textBox3
+            // txtDescription
             // 
-            this.textBox3.Location = new System.Drawing.Point(338, 255);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(132, 22);
-            this.textBox3.TabIndex = 39;
+            this.txtDescription.Location = new System.Drawing.Point(338, 255);
+            this.txtDescription.Name = "txtDescription";
+            this.txtDescription.Size = new System.Drawing.Size(132, 22);
+            this.txtDescription.TabIndex = 39;
             // 
             // label5
             // 
@@ -132,24 +132,24 @@
             this.label5.TabIndex = 38;
             this.label5.Text = "Description :";
             // 
-            // UpdateTestTypes
+            // frmEditTestType
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.label4);
+            this.Controls.Add(this.lblTestTypeID);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.txtFees);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtTitle);
             this.Controls.Add(this.name);
             this.Controls.Add(this.label1);
-            this.Name = "UpdateTestTypes";
+            this.Name = "frmEditTestType";
             this.Text = "UpdateTestTypes";
-            this.Load += new System.EventHandler(this.UpdateTestTypes_Load);
+           // this.Load += new System.EventHandler(this.UpdateTestTypes_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -158,14 +158,14 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblTestTypeID;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtFees;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label name;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDescription;
         private System.Windows.Forms.Label label5;
     }
 }

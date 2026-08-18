@@ -46,9 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ApplicationDAL\ApplicationTypesDAL.cs" />
+    <Compile Include="ApplicationDAL\clsApplicationTypeData.cs" />
     <Compile Include="ApplicationDAL\clsApplicationData.cs" />
-    <Compile Include="ApplicationDAL\TestTypesDAL.cs" />
+    <Compile Include="ApplicationDAL\clsTestAppointmentData.cs" />
+    <Compile Include="ApplicationDAL\clsTestData.cs" />
+    <Compile Include="ApplicationDAL\clsTestTypeData.cs" />
+    <Compile Include="clsDriverData\clsDriverData.cs" />
     <Compile Include="CountryDAL\CountryDAL.cs" />
     <Compile Include="DataAccessSettings.cs" />
     <Compile Include="Form1.cs">
@@ -57,6 +60,10 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="License\clsDetainedLicenseData.cs" />
+    <Compile Include="License\clsInternationalLicenseData.cs" />
+    <Compile Include="License\clsLicenseClassData.cs" />
+    <Compile Include="License\clsLicenseData.cs" />
     <Compile Include="License\clsLocalDrivingLicenseApplicationData.cs" />
     <Compile Include="License\LicenseClassesDAL.cs" />
     <Compile Include="PeopleDAL\ManagePeopleDAL.cs" />

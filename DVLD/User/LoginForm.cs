@@ -36,7 +36,7 @@ namespace DVLD.User
             }
             else
             {
-                DVLD.Classes.clsGlobal.CurrentUser = ManageUserBLL.FindUserByID(_id);
+                Classes.clsGlobal.CurrentUser = ManageUserBLL.FindUserByID(_id);
                 this.Hide();
                 Form1 ma = new Form1();
                 ma.ShowDialog();

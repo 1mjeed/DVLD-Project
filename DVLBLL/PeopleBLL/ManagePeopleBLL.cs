@@ -28,7 +28,12 @@ namespace DVLBLL
         public string Phone { get; set; }
         public string ImagePath { get; set; }
         public int NationalityCountryID { get; set; }
-       
+        public string FullName
+        {
+            get { return FirstName + " " + SecondName + " " + ThirdName + " " + LastName; }
+
+        }
+
         public ManagePeopleBLL()
         {
             this.PersonID = -1;
