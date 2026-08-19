@@ -46,7 +46,7 @@ namespace DVLD
             this.Gendor.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Gendor.Location = new System.Drawing.Point(15, 42);
             this.Gendor.Name = "Gendor";
-            this.Gendor.Size = new System.Drawing.Size(16, 23);
+            this.Gendor.Size = new System.Drawing.Size(13, 18);
             this.Gendor.TabIndex = 25;
             this.Gendor.Text = " ";
             // 
@@ -114,6 +114,7 @@ namespace DVLD
             this.cartPersonInformation1.Name = "cartPersonInformation1";
             this.cartPersonInformation1.Size = new System.Drawing.Size(837, 272);
             this.cartPersonInformation1.TabIndex = 0;
+            this.cartPersonInformation1.Load += new System.EventHandler(this.cartPersonInformation1_Load);
             // 
             // FilterPersonInformation
             // 

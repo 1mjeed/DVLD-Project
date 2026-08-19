@@ -18,9 +18,10 @@ namespace DVLBLL
 
         public int ApplicationID { set; get; }
         public int ApplicantPersonID { set; get; }
-        
+        public ManagePeopleBLL PersonInfo ; 
         public DateTime ApplicationDate { set; get; }
         public int ApplicationTypeID { set; get; }
+
         public clsApplicationType ApplicationTypeInfo;
         public enApplicationStatus ApplicationStatus { set; get; }
         public string StatusText

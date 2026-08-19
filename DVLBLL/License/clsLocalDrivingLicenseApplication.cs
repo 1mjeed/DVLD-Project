@@ -22,7 +22,8 @@ namespace DVLBLL
         {
             get
             {
-                return ManagePeopleBLL.FindPeopleById(ApplicantPersonID).FullName;
+               return base.PersonInfo.FullName ; 
+               // return ManagePeopleBLL.FindPeopleById(ApplicantPersonID).FullName;
             }
 
         }
@@ -42,6 +43,7 @@ namespace DVLBLL
             DateTime ApplicationDate, int ApplicationTypeID,
              enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
              float PaidFees, int CreatedByUserID, int LicenseClassID)
+
 
         {
             this.LocalDrivingLicenseApplicationID = LocalDrivingLicenseApplicationID; ;

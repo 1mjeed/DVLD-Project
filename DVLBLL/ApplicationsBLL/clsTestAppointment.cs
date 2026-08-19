@@ -26,8 +26,10 @@ namespace DVLBLL.ApplicationsBLL
 
         public int TestID
         {
-            get { return _GetTestID(); }
+            get
+            { return _GetTestID();
 
+            }
         }
 
         public clsTestAppointment()

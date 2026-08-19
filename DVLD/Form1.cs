@@ -1,4 +1,5 @@
 ﻿using DVLD.Applications;
+using DVLD.Applications.Local_Driving_License;
 using DVLD.People;
 using DVLD.User;
 
@@ -89,13 +90,14 @@ using System.Windows.Forms;
 
         private void localLicenseToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            NewLocalDrivingApplication lic = new NewLocalDrivingApplication();
+            frmAddUpdateLocalDrivingLicesnseApplication lic = new frmAddUpdateLocalDrivingLicesnseApplication();
             lic.ShowDialog();
         }
 
         private void localDrivingApplicationsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmListLocalDrivingLicesnseApplications l = new frmListLocalDrivingLicesnseApplications();
+            l.ShowDialog();
         }
     }
 }
