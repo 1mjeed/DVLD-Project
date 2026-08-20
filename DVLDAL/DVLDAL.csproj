@@ -65,7 +65,6 @@
     <Compile Include="License\clsLicenseClassData.cs" />
     <Compile Include="License\clsLicenseData.cs" />
     <Compile Include="License\clsLocalDrivingLicenseApplicationData.cs" />
-    <Compile Include="License\LicenseClassesDAL.cs" />
     <Compile Include="PeopleDAL\ManagePeopleDAL.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

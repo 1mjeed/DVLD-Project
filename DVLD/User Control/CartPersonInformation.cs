@@ -1,26 +1,14 @@
 ﻿using DVLBLL;
 using DVLBLL.CountryBLL;
-using DVLD.People;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-
 namespace DVLD.User_Control
 {
     public partial class CartPersonInformation : UserControl
     {
          //private int _Id;
         private ManagePeopleBLL _Person;
-        private CountryBLL _Country;
         private int _PersonId = -1; 
         public int PersonID
         {
