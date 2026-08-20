@@ -21,6 +21,13 @@ namespace DVLBLL
         public ManagePeopleBLL PersonInfo ; 
         public DateTime ApplicationDate { set; get; }
         public int ApplicationTypeID { set; get; }
+        public string ApplicantFullName
+        {
+            get
+            {
+                return ManagePeopleBLL.FindPeopleById(ApplicantPersonID).FullName;
+            }
+        }
 
         public clsApplicationType ApplicationTypeInfo;
         public enApplicationStatus ApplicationStatus { set; get; }
@@ -49,7 +56,6 @@ namespace DVLBLL
         public ManageUserBLL CreatedByUserInfo;
 
         public clsApplication()
-
         {
             this.ApplicationID = -1;
             this.ApplicantPersonID = -1;
@@ -59,16 +65,13 @@ namespace DVLBLL
             this.LastStatusDate = DateTime.Now;
             this.PaidFees = 0;
             this.CreatedByUserID = -1;
-
             Mode = enMode.AddNew;
-
         }
 
         private clsApplication(int ApplicationID, int ApplicantPersonID,
             DateTime ApplicationDate, int ApplicationTypeID,
              enApplicationStatus ApplicationStatus, DateTime LastStatusDate,
              float PaidFees, int CreatedByUserID)
-
         {
             this.ApplicationID = ApplicationID;
             this.ApplicantPersonID = ApplicantPersonID;

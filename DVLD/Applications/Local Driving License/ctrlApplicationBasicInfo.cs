@@ -50,7 +50,7 @@ namespace DVLD.Applications.Local_Driving_License
             lblStatus.Text = _Application.StatusText;
             lblType.Text = _Application.ApplicationTypeInfo.Title;
             lblFees.Text = _Application.PaidFees.ToString();
-            lblApplicant.Text = _Application.PersonInfo.FullName;
+            lblApplicant.Text = _Application.ApplicantFullName;
             lblDate.Text = clsFormat.DateToShort(_Application.ApplicationDate);
             lblStatusDate.Text = clsFormat.DateToShort(_Application.LastStatusDate);
             lblCreatedByUser.Text = _Application.CreatedByUserInfo.UserName;
